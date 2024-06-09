@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+        <div class="main">
+          <div class="container">
+            <h1>Bookmarke</h1>
+            <br>
+            <br>
+            <hr class="mx-5">
+            <h2 class="mx-3">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+
+            </h2>
+
+
+            <label class="mx-5 mb-2">
+                <i class="fa-solid fa-book-bookmark"></i>
+                Site Name</label>
+
+            <div class="form-floating  mx-5">
+                <input oninput="validateSite(this);" type="text" class="form-control" id="bookmarkeName" placeholder="Bookmarke Name">
+                <div class="alert alert-danger mx-5 py-1 mt-2 d-none " id="name">
+                  <i class="fa-regular fa-circle-right p-2 text-warning "></i>Site name must
+                  contain at least 3 characters
+  
+                </div>
+                <label for="bookmarkeName">Bookmarke Name</label>
+              </div>
+  
+          
+              <label class="mx-5 mb-2 mt-4">
+                <i class="fa-solid fa-link"></i>
+                                Site URL</label>
+
+            <div class="form-floating  mx-5">
+                <input oninput="validateSite(this);" type="url" class="form-control" id="websiteUrl" placeholder="Bookmarke Name">
+                <div class="alert alert-danger mx-5 py-1 mt-2 d-none " id="url">
+                  <i class="fa-regular fa-circle-right p-2 text-warning"></i>Site URL must be a
+              valid one
+                </div>
+                <label for="websiteUrl">Website Url</label>
+              </div>
+          
+              <div class="text-center">
+                <button id="myBtn" type="button" class="btn btn-color mt-5 mb-2 " >Sumbit</button>
+                <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header w-100 d-flex justify-content-between align-items-center mb-4">
+      <div class="circles d-flex">
+        <i class="fa-solid fa-circle me-2 text-danger"></i>
+        <i class="fa-solid fa-circle me-2 text-warning"></i>
+        <i class="fa-solid fa-circle text-success"></i>            </div>
+        <button class="btn border-0 close" data-bs-dismiss="modal" id="closeBtn">
+          <i class="fa-solid fa-xmark close fs-3"></i>
+        </button>
+            </div>
+    <div class="modal-body">
+      <p class="m-0 pb-2 fs-4 fw-bold">
+        Site Name or Url is not valid, Please follow the rules below :
+      </p>
+      <ol class="rules list-unstyled m-0 fs-5">
+        <li>
+          <i class="fa-regular fa-circle-right p-2 text-warning"></i>Site name must
+          contain at least 3 characters
+        </li>
+        <li>
+          <i class="fa-regular fa-circle-right p-2 text-warning"></i>Site URL must be a
+          valid one
+        </li>
+      </ol>
+    </div>
+
+  </div>
+
+</div>
+              <!--<button id="withoutinfobtn" onclick="addSite();" type="button" class="btn btn-color mt-5 mb-2 d-none " data-bs-toggle="modal" data-bs-target="#exampleModal" >Sumbit</button>-->  
+
+                <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header w-100 d-flex justify-content-between align-items-center mb-4">
+        <div class="circles d-flex">
+          <i class="fa-solid fa-circle me-2 text-danger"></i>
+          <i class="fa-solid fa-circle me-2 text-warning"></i>
+          <i class="fa-solid fa-circle text-success"></i>            </div>
+          <button class="btn border-0 close" data-bs-dismiss="modal" id="closeBtn">
+            <i class="fa-solid fa-xmark close fs-3"></i>
+          </button>
+              </div>
+      <div class="modal-body">
+        <p class="m-0 pb-2 fs-4 fw-bold">
+          Site Name or Url is not valid, Please follow the rules below :
+        </p>
+        <ol class="rules list-unstyled m-0 fs-5">
+          <li>
+            <i class="fa-regular fa-circle-right p-2 text-warning"></i>Site name must
+            contain at least 3 characters
+          </li>
+          <li>
+            <i class="fa-regular fa-circle-right p-2 text-warning"></i>Site URL must be a
+            valid one
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>
+                <hr class="mx-5">
+
+              </div>
+              <table class="table mt-4 text-center bg-white ">
+                <thead>
+                  <tr>
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+              
+          </div>
+
+
+        </div>
+
+
+
+
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
